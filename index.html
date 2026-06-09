@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cindervale | PeakForge Games</title>
 
+<link rel="icon" type="image/png" href="assets/peakforge-logo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <script src="https://kit.fontawesome.com/a2e0e6ad72.js" crossorigin="anonymous"></script>
 
 <style>
+
 :root{
     --bg:#050505;
-    --panel:#0d0d0d;
     --gold:#d7a84f;
     --gold-dark:#8d6830;
     --text:#e8e1d5;
@@ -19,17 +23,21 @@
     --line:#3a2b17;
 }
 
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     margin:0;
     background:#050505;
     color:var(--text);
     font-family:'Press Start 2P', monospace;
-    text-align:center;
     line-height:1.8;
+    text-align:center;
 }
 
 a{
@@ -37,25 +45,31 @@ a{
     text-decoration:none;
 }
 
+/* NAVIGATION */
+
 .nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:50;
-    min-height:78px;
+    z-index:100;
+    min-height:80px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:10px 42px;
-    background:rgba(0,0,0,.78);
+
+    padding:10px 40px;
+
+    background:rgba(0,0,0,.85);
     backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(215,168,79,.22);
+
+    border-bottom:1px solid rgba(215,168,79,.2);
 }
 
 .logo img{
-    width:135px;
-    display:block;
+    width:180px;
+    height:auto;
 }
 
 .links{
@@ -78,206 +92,183 @@ a{
     color:var(--gold);
 }
 
+/* HERO */
+
 .hero{
     position:relative;
-    min-height:820px;
-    padding:150px 20px 100px;
+    min-height:900px;
+
     display:flex;
     align-items:center;
-    justify-content:flex-start;
+
     overflow:hidden;
-    border-bottom:1px solid rgba(215,168,79,.25);
 }
 
-.hero:before{
+.hero::before{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.25) 100%),
-        linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.65)),
-        url("cindervale-hero.png") center center / cover no-repeat;
-    filter:contrast(1.1) saturate(.95);
-    transform:scale(1.02);
-}
 
-.hero:after{
-    content:"";
-    position:absolute;
-    inset:0;
     background:
-        repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px),
-        radial-gradient(circle at center, transparent 20%, rgba(0,0,0,.7) 100%);
-    pointer-events:none;
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88) 0%,
+            rgba(0,0,0,.55) 45%,
+            rgba(0,0,0,.25) 100%
+        ),
+        url("assets/cindervale-hero.png")
+        center center / cover no-repeat;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:720px;
+
+    max-width:750px;
     text-align:left;
-    margin-left:55px;
+
+    margin-left:80px;
 }
 
 h1{
     margin:0;
     color:var(--gold);
+
     font-size:4rem;
-    letter-spacing:4px;
+    letter-spacing:5px;
+
     text-shadow:5px 5px 0 #000;
 }
 
 .divider{
-    width:360px;
-    max-width:90%;
-    height:1px;
-    background:linear-gradient(90deg,var(--gold),transparent);
-    margin:24px 0;
-    position:relative;
-}
+    width:350px;
+    height:2px;
 
-.divider:after{
-    content:"◆";
-    position:absolute;
-    top:-15px;
-    left:52%;
-    color:var(--gold);
-    font-size:.55rem;
+    margin:25px 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--gold),
+        transparent
+    );
 }
 
 .subtitle{
-    max-width:620px;
-    font-size:.72rem;
-    color:var(--text);
-    text-shadow:2px 2px 0 #000;
+    font-size:.7rem;
+    max-width:650px;
 }
 
 .cta{
-    margin-top:34px;
+    margin-top:40px;
 }
 
 .btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
-    min-width:250px;
-    margin:10px 14px 10px 0;
-    padding:17px 22px;
-    color:var(--text);
-    background:rgba(10,10,10,.78);
+
+    gap:10px;
+
+    min-width:240px;
+
+    margin:10px 15px 10px 0;
+
+    padding:18px 20px;
+
     border:2px solid var(--gold-dark);
-    box-shadow:0 0 0 2px #080604 inset;
-    font-size:.62rem;
-    transition:.16s ease;
+
+    background:#111;
+
+    transition:.2s;
 }
 
 .btn:hover{
-    color:var(--gold);
     border-color:var(--gold);
+    color:var(--gold);
     transform:translateY(-3px);
-    box-shadow:0 0 20px rgba(215,168,79,.18);
 }
 
+/* SECTIONS */
+
 section{
-    padding:80px 20px;
+    padding:90px 20px;
 }
 
 h2{
     color:var(--gold);
-    font-size:1.05rem;
-    letter-spacing:2px;
-    margin:0 0 34px;
-    text-shadow:3px 3px 0 #000;
+    margin-bottom:20px;
 }
 
 .section-divider{
-    width:430px;
-    max-width:85%;
-    height:1px;
-    margin:0 auto 35px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    width:400px;
+    max-width:90%;
+    height:2px;
+
+    margin:0 auto 40px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
 }
+
+/* FEATURES */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:28px;
-    max-width:1120px;
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    max-width:1100px;
     margin:auto;
 }
 
 .card{
-    background:linear-gradient(180deg,rgba(21,18,13,.95),rgba(7,7,7,.95));
+    background:#0d0d0d;
+
     border:2px solid var(--line);
-    padding:34px 24px;
-    min-height:230px;
-    position:relative;
-}
 
-.card:before,
-.card:after{
-    content:"";
-    position:absolute;
-    width:13px;
-    height:13px;
-    border:2px solid var(--gold-dark);
-}
-
-.card:before{
-    top:-7px;
-    left:-7px;
-    border-right:none;
-    border-bottom:none;
-}
-
-.card:after{
-    bottom:-7px;
-    right:-7px;
-    border-left:none;
-    border-top:none;
+    padding:35px 25px;
 }
 
 .icon{
-    font-size:2.1rem;
     color:var(--gold);
-    margin-bottom:16px;
+    font-size:2rem;
 }
 
 .card h3{
-    font-size:.68rem;
     color:var(--gold);
-    margin:10px 0 14px;
+    font-size:.7rem;
 }
 
 .card p{
     font-size:.58rem;
     color:var(--muted);
-    max-width:300px;
-    margin:auto;
 }
+
+/* PLATFORMS */
 
 .store-row{
     display:flex;
-    justify-content:center;
     flex-wrap:wrap;
-    gap:18px;
-    max-width:1100px;
-    margin:0 auto;
+    justify-content:center;
+    gap:20px;
 }
 
 .store{
-    min-width:230px;
-    padding:18px 24px;
-    background:rgba(16,14,11,.9);
-    border:2px solid var(--line);
-    font-size:.62rem;
-    transition:.16s ease;
-}
+    min-width:220px;
 
-.store i{
-    margin-right:12px;
-    font-size:1.05rem;
+    padding:18px 20px;
+
+    border:2px solid var(--line);
+
+    background:#111;
 }
 
 .store:hover{
@@ -285,88 +276,111 @@ h2{
     border-color:var(--gold);
 }
 
+/* TRAILER */
+
 .trailer-box{
     width:90%;
     max-width:900px;
+
     aspect-ratio:16/9;
+
     margin:auto;
-    border:3px solid var(--gold-dark);
+
     background:
-        linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.52)),
-        url("cindervale-hero.png") center center / cover no-repeat;
+        linear-gradient(
+            rgba(0,0,0,.3),
+            rgba(0,0,0,.6)
+        ),
+        url("assets/cindervale-hero.png")
+        center center / cover no-repeat;
+
+    border:3px solid var(--gold-dark);
+
     display:grid;
     place-items:center;
-    box-shadow:0 0 30px rgba(0,0,0,.7);
 }
 
 .play{
-    width:92px;
-    height:64px;
-    border-radius:14px;
+    width:100px;
+    height:70px;
+
+    border-radius:12px;
+
     background:#d71920;
+
     display:grid;
     place-items:center;
+
     font-size:2rem;
-    box-shadow:0 0 22px rgba(215,25,32,.35);
 }
 
+/* CONTACT */
+
 .contact-card{
-    max-width:760px;
+    max-width:700px;
+
     margin:auto;
-    padding:35px 24px;
+
+    padding:35px;
+
     border:2px solid var(--line);
-    background:linear-gradient(180deg,rgba(21,18,13,.9),rgba(7,7,7,.95));
+
+    background:#111;
 }
 
 .contact-card p{
     color:var(--muted);
-    font-size:.62rem;
+    font-size:.6rem;
+}
+
+/* FOOTER */
+
+footer{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    padding:35px;
+
+    border-top:1px solid rgba(215,168,79,.15);
+}
+
+footer img{
+    width:180px;
 }
 
 .mail{
     color:var(--gold);
 }
 
-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-    flex-wrap:wrap;
-    padding:34px 44px;
-    border-top:1px solid rgba(215,168,79,.18);
-    color:var(--muted);
-    font-size:.52rem;
-    background:#050505;
-}
-
-footer img{
-    width:145px;
-}
-
 .wishlist{
+    padding:15px 20px;
+
     border:2px solid var(--line);
-    padding:14px 20px;
-    color:var(--text);
 }
 
 .wishlist:hover{
-    color:var(--gold);
     border-color:var(--gold);
+    color:var(--gold);
 }
 
+/* MOBILE */
+
 @media(max-width:900px){
+
     .nav{
         position:relative;
         flex-direction:column;
-        padding:14px 18px;
-        gap:12px;
+        gap:15px;
     }
 
     .links{
-        justify-content:center;
         flex-wrap:wrap;
-        gap:14px;
+        justify-content:center;
     }
 
     .socials{
@@ -374,33 +388,25 @@ footer img{
     }
 
     .hero{
-        min-height:720px;
-        justify-content:center;
-        padding:90px 20px;
+        min-height:700px;
     }
 
     .hero-content{
-        margin-left:0;
+        margin:0 auto;
         text-align:center;
+        padding:20px;
     }
 
     .divider{
-        margin:24px auto;
-        background:linear-gradient(90deg,transparent,var(--gold),transparent);
+        margin:25px auto;
     }
 
     h1{
-        font-size:2.05rem;
+        font-size:2rem;
     }
 
     .subtitle{
-        font-size:.58rem;
-        margin:auto;
-    }
-
-    .btn{
-        min-width:220px;
-        margin:10px;
+        font-size:.6rem;
     }
 
     footer{
@@ -408,14 +414,16 @@ footer img{
         text-align:center;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <nav class="nav">
+
     <a class="logo" href="#">
-        <img src="peakforge-logo.png" alt="PeakForge Games logo">
+        <img src="assets/peakforge-logo.png" alt="PeakForge Games">
     </a>
 
     <div class="links">
@@ -429,14 +437,17 @@ footer img{
     <div class="socials">
         <a href="#"><i class="fab fa-steam"></i></a>
         <a href="#"><i class="fab fa-discord"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
+
 </nav>
 
 <header class="hero">
+
     <div class="hero-content">
+
         <h1>CINDERVALE</h1>
+
         <div class="divider"></div>
 
         <p class="subtitle">
@@ -445,100 +456,123 @@ footer img{
         </p>
 
         <div class="cta">
-            <a class="btn" href="#stores">
-                <i class="fas fa-gamepad"></i>
+
+            <a href="#stores" class="btn">
                 AVAILABLE PLATFORMS
             </a>
 
-            <a class="btn" href="#trailer">
-                <i class="fas fa-play"></i>
+            <a href="#trailer" class="btn">
                 WATCH TRAILER
             </a>
+
         </div>
+
     </div>
+
 </header>
 
 <section id="features">
+
     <h2>FEATURES</h2>
+
     <div class="section-divider"></div>
 
     <div class="grid">
+
         <div class="card">
-            <div class="icon"><i class="fas fa-dragon"></i></div>
+            <div class="icon">🐉</div>
             <h3>DRAGON ENCOUNTERS</h3>
             <p>Face legendary beasts guarding forgotten treasures.</p>
         </div>
 
         <div class="card">
-            <div class="icon"><i class="fas fa-tree"></i></div>
+            <div class="icon">🌲</div>
             <h3>MYSTIC WILDERNESS</h3>
             <p>Explore moonlit forests, ancient shrines, and cursed ruins.</p>
         </div>
 
         <div class="card">
-            <div class="icon"><i class="fas fa-gavel"></i></div>
+            <div class="icon">⚔️</div>
             <h3>TACTICAL COMBAT</h3>
-            <p>Dodge, strike, and survive with pixel-perfect timing.</p>
+            <p>Dodge, strike and survive with pixel-perfect timing.</p>
         </div>
+
     </div>
+
 </section>
 
 <section id="stores">
+
     <h2>AVAILABLE ON</h2>
+
     <div class="section-divider"></div>
 
     <div class="store-row">
-        <a class="store" href="#"><i class="fab fa-steam"></i>STEAM</a>
-        <a class="store" href="#"><i class="fas fa-download"></i>ITCH.IO</a>
-        <a class="store" href="#"><i class="fas fa-compact-disc"></i>GOG</a>
-        <a class="store" href="#"><i class="fas fa-gamepad"></i>NINTENDO SWITCH</a>
+
+        <a href="#" class="store">STEAM</a>
+        <a href="#" class="store">ITCH.IO</a>
+        <a href="#" class="store">GOG</a>
+        <a href="#" class="store">NINTENDO SWITCH</a>
+
     </div>
+
 </section>
 
 <section id="trailer">
+
     <h2>CINDERVALE TRAILER</h2>
+
     <div class="section-divider"></div>
 
-    <a class="trailer-box" href="https://www.youtube.com/" target="_blank">
-        <div class="play">
-            <i class="fas fa-play"></i>
-        </div>
-    </a>
+    <div class="trailer-box">
+        <div class="play">▶</div>
+    </div>
+
 </section>
 
 <section id="contact">
+
     <h2>CONTACT</h2>
+
     <div class="section-divider"></div>
 
     <div class="contact-card">
+
         <p>
             For publishing inquiries, business opportunities,
-            press requests, or support:
+            press requests or support:
         </p>
 
-        <a class="btn" href="mailto:peakforgegames@gmail.com">
-            <i class="fas fa-envelope"></i>
-            peakforgegames@gmail.com
+        <br>
+
+        <a class="btn"
+           href="mailto:peakforgegames@gmail.com">
+           peakforgegames@gmail.com
         </a>
+
     </div>
+
 </section>
 
 <footer>
-    <img src="peakforge-logo.png" alt="PeakForge Games logo">
+
+    <img src="assets/peakforge-logo.png"
+         alt="PeakForge Games">
 
     <div>
-        © 2026 PEAKFORGE GAMES · ALL RIGHTS RESERVED
+        © 2026 PEAKFORGE GAMES
         <br><br>
         Contact:
-        <a class="mail" href="mailto:peakforgegames@gmail.com">
-            peakforgegames@gmail.com
+        <a class="mail"
+           href="mailto:peakforgegames@gmail.com">
+           peakforgegames@gmail.com
         </a>
     </div>
 
-    <a class="wishlist" href="#">
-        <i class="fab fa-steam"></i>
+    <a href="#" class="wishlist">
         WISHLIST ON STEAM
     </a>
+
 </footer>
 
 </body>
